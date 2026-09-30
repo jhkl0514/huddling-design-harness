@@ -1,12 +1,13 @@
 {
   "slug": "my-assets",
-  "stage": "P5",
+  "stage": "DONE",
   "fails": {
     "P1": 0,
     "P2": 0,
     "P3": 0,
     "HUMAN": 0,
-    "P4": 0
+    "P4": 0,
+    "P5": 0
   },
   "approval": {
     "hash": "f6e24b199d04",
@@ -37,6 +38,11 @@
       "gate": "P4",
       "status": "pass",
       "at": "2026-09-30T08:37:20.191Z"
+    },
+    {
+      "gate": "P5",
+      "status": "pass",
+      "at": "2026-09-30T23:26:41.677Z"
     }
   ]
 }
