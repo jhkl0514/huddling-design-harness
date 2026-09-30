@@ -1,14 +1,14 @@
 ---
 name: judge
 description: 게이트 판정 전용 (읽기 전용). "<slug> <게이트> 판정해줘"로 메인 세션이 부른다. 산출물을 고치지 않는다.
-tools: Read, Bash, mcp__claude_ai_Figma__use_figma
+tools: Read, Bash, mcp__claude_ai_Figma__use_figma, mcp__plugin_figma_figma__use_figma
 hooks:
   PreToolUse:
     - matcher: "Bash"
       hooks:
         - type: command
           command: node "$CLAUDE_PROJECT_DIR/harness/scripts/guard-judge-bash.mjs"
-    - matcher: "mcp__claude_ai_Figma__use_figma"
+    - matcher: "mcp__claude_ai_Figma__use_figma|mcp__plugin_figma_figma__use_figma"
       hooks:
         - type: command
           command: node "$CLAUDE_PROJECT_DIR/harness/scripts/guard-judge-figma.mjs"

@@ -1,12 +1,17 @@
 {
   "slug": "my-assets",
-  "stage": "HUMAN",
+  "stage": "P5",
   "fails": {
     "P1": 0,
     "P2": 0,
-    "P3": 0
+    "P3": 0,
+    "HUMAN": 0,
+    "P4": 0
   },
-  "approval": null,
+  "approval": {
+    "hash": "f6e24b199d04",
+    "at": "2026-09-30T08:31:17.107Z"
+  },
   "history": [
     {
       "gate": "P1",
@@ -22,6 +27,16 @@
       "gate": "P3",
       "status": "pass",
       "at": "2026-09-30T08:27:34.769Z"
+    },
+    {
+      "gate": "HUMAN",
+      "status": "pass",
+      "at": "2026-09-30T08:31:17.112Z"
+    },
+    {
+      "gate": "P4",
+      "status": "pass",
+      "at": "2026-09-30T08:37:20.191Z"
     }
   ]
 }

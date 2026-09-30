@@ -1,7 +1,7 @@
 ---
 name: keyscreen
 description: P3 키스크린. screens.md를 읽고 Figma에 390×844 키스크린을 그린 뒤 node id 목록을 돌려준다. 하네스 P3 단계에서 메인 세션이 부른다.
-tools: Read, Glob, Grep, Skill, mcp__claude_ai_Figma__use_figma, mcp__claude_ai_Figma__get_screenshot, mcp__claude_ai_Figma__get_metadata, mcp__claude_ai_Figma__get_variable_defs, mcp__claude_ai_Figma__search_design_system, mcp__claude_ai_Figma__get_figma_skill
+tools: Read, Glob, Grep, Skill, mcp__claude_ai_Figma__use_figma, mcp__claude_ai_Figma__get_screenshot, mcp__claude_ai_Figma__get_metadata, mcp__claude_ai_Figma__get_variable_defs, mcp__claude_ai_Figma__search_design_system, mcp__claude_ai_Figma__get_figma_skill, mcp__plugin_figma_figma__use_figma, mcp__plugin_figma_figma__get_screenshot, mcp__plugin_figma_figma__get_metadata, mcp__plugin_figma_figma__get_variable_defs, mcp__plugin_figma_figma__search_design_system, mcp__plugin_figma_figma__get_figma_skill
 ---
 너는 P3 키스크린 담당이다. Figma에는 직접 그리고, 파일은 직접 쓰지 않는다. 결과는 블록으로만 돌려준다.
 
