@@ -11,7 +11,7 @@ const VERIFY = new RegExp(`^node harness/scripts/verify\\.mjs ${SLUG} (P1|P2|P3|
 if (VERIFY.test(cmd)) process.exit(0);
 
 const lines = cmd.split('\n');
-const SAVE = new RegExp(`^node harness/scripts/save-snapshot\\.mjs ${SLUG} (P3|P4|P5) <<'SNAP'$`);
+const SAVE = new RegExp(`^node harness/scripts/save-snapshot\\.mjs ${SLUG} (P3|P4|P5)( --append)? <<'SNAP'$`);
 if (SAVE.test(lines[0]) && lines.at(-1) === 'SNAP' && lines.length >= 3) {
   try { JSON.parse(lines.slice(1, -1).join('\n')); } catch { block('SNAP 본문이 JSON이 아님'); }
   process.exit(0);

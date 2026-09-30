@@ -24,12 +24,15 @@ function radius(n) {
   return [n.topLeftRadius, n.topRightRadius, n.bottomRightRadius, n.bottomLeftRadius];
 }
 
+// use_figma 반환 한도(20KB) 때문에 비어 있는 필드는 뺀다. verify.mjs는 빠진 필드를 빈 값으로 본다.
+const pack = (o) => Object.fromEntries(Object.entries(o).filter(([, v]) => v !== undefined && !(Array.isArray(v) && v.length === 0)));
+
 function describe(n) {
   const base = { id: n.id, name: n.name, type: n.type, width: n.width, height: n.height };
   if ('effects' in n) base.effects = n.effects.filter((e) => e.visible !== false).map((e) => ({ type: e.type }));
   if (n.type === 'TEXT') {
     const segs = n.getStyledTextSegments(['fontName', 'fontSize', 'lineHeight', 'letterSpacing', 'fills']);
-    return segs.map((s, i) => ({
+    return segs.map((s, i) => pack({
       ...base,
       name: segs.length > 1 ? `${n.name}#${i}` : n.name,
       fills: paints(s.fills),
@@ -45,7 +48,7 @@ function describe(n) {
   const out = { ...base, fills: paints(n.fills), strokes: paints(n.strokes), cornerRadius: radius(n) };
   if ('layoutMode' in n && n.layoutMode !== 'NONE')
     out.layout = { itemSpacing: n.itemSpacing, padding: [n.paddingTop, n.paddingRight, n.paddingBottom, n.paddingLeft] };
-  return [out];
+  return [pack(out)];
 }
 
 const frames = [];

@@ -145,7 +145,7 @@ design_check:                           # docs/design.md에서 뽑은 허용 목
   radius_exceptions: [{ prefix: app-icon, ratio: 0.3 }]   # 한 변의 30%
   cta: { suffix: ".cta", radius: 9999, min_height: 44 }
   spacing: [0, 4, 8, 12, 16, 24, 32, 48, 64]              # 0은 간격 없음
-  font_family: [Pretendard]
+  font_family: [Pretendard, Noto Sans KR]
   letter_spacing: [0]
   typography:                           # [size, weight, lineHeight]
     - [32, 700, 1.3]   # display

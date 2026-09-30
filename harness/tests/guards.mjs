@@ -46,6 +46,7 @@ check('잠금 해제 파일 생성 차단', 'guard-bash.mjs', bash('touch .harne
 // guard-judge-bash
 check('verify 허용', 'guard-judge-bash.mjs', bash('node harness/scripts/verify.mjs my-assets P3'), 0);
 check('스냅샷 저장 허용', 'guard-judge-bash.mjs', bash(`node harness/scripts/save-snapshot.mjs my-assets P3 <<'SNAP'\n{"frames":[]}\nSNAP`), 0);
+check('스냅샷 이어 저장 허용', 'guard-judge-bash.mjs', bash(`node harness/scripts/save-snapshot.mjs my-assets P3 --append <<'SNAP'\n{"frames":[]}\nSNAP`), 0);
 check('명령 이어붙이기 차단', 'guard-judge-bash.mjs', bash('node harness/scripts/verify.mjs my-assets P3; rm -rf runs'), 2);
 check('JSON 아닌 본문 차단', 'guard-judge-bash.mjs', bash(`node harness/scripts/save-snapshot.mjs my-assets P3 <<'SNAP'\nrm -rf /\nSNAP`), 2);
 check('다른 명령 차단', 'guard-judge-bash.mjs', bash('ls runs'), 2);
