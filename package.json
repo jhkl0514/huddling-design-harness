@@ -1,0 +1,13 @@
+{
+  "name": "design-harness",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "verify": "node harness/scripts/verify.mjs",
+    "test": "node harness/tests/run.mjs && node harness/tests/guards.mjs",
+    "test:guards": "node harness/tests/guards.mjs"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}
